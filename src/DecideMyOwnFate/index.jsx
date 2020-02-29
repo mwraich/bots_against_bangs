@@ -10,10 +10,7 @@ class DecideMyOwnFate extends Component {
   }
 
   render() {
-    if (this.props.isVisible) {
-      return ('decide my own fate');
-    }
-    return null;
+    return ('decide my own fate');
   }
 }
 export default DecideMyOwnFate;

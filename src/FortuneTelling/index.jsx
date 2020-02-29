@@ -38,7 +38,6 @@ class FortuneTelling extends Component {
   };
 
   render() {
-    if (this.props.isVisible) {
       return(
       <div>
         <img
@@ -52,8 +51,7 @@ class FortuneTelling extends Component {
         </div>
       </div>
       )
-    }
-    return null;
+
   }
 }
 export default FortuneTelling;
