@@ -3,6 +3,7 @@ import './homepage.css';
 import { Button, Container, Row } from 'reactstrap';
 import FortuneTelling from '../FortuneTelling';
 import DecideMyOwnFate from '../DecideMyOwnFate';
+import clippy from '../Images/clippy.png';
 
 class HomePage extends Component {
   constructor(props) {
@@ -21,8 +22,8 @@ class HomePage extends Component {
       return null
     }
     return(
-    <Button className="mr-3" onClick={() => this.setState({ showFortuneTeller: true, showSelectionPath: false })}>
-      Ask A fortune Teller
+    <Button style={{marginTop: 40}} className="mr-3" onClick={() => this.setState({ showFortuneTeller: true, showSelectionPath: false })}>
+      Ask A Fortune Teller
     </Button>
     )
   }
@@ -32,7 +33,7 @@ class HomePage extends Component {
       return <DecideMyOwnFate />
     }
     return(
-      <Button onClick={() => this.setState({ showSelectionPath: true, showFortuneTeller: false })}>
+      <Button style={{marginTop: 40}} onClick={() => this.setState({ showSelectionPath: true, showFortuneTeller: false })}>
       Decide My Own Fate
     </Button>
     )
@@ -42,10 +43,14 @@ class HomePage extends Component {
     return (
       <div className="homepage fixed-top">
         {!this.state.showSelectionPath &&
-        <h1 className='mt-3'> Should I get Bangs? </h1>
-  }
+        <h1 className='mt-3' style={{fontSize: 100}}> Should I Get Bangs? </h1>
+        }
+        
+        <div>
           {this.askAFortuneTeller()}
           {this.decideMyOwnFate()}
+        </div>
+          
       </div>
     );
   }

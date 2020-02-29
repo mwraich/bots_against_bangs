@@ -3,6 +3,7 @@ import sample from 'lodash.sample';
 import MagicBall from '../Images/MagicBall.svg';
 import FortuneTellingBall from '../Images/FortuneTellingBall.svg';
 import './style.css';
+import {Spinner} from 'reactstrap';
 
 const FORTUNE_RESPONSE = [
   'It is not adviseable.',
@@ -29,17 +30,29 @@ class FortuneTelling extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFortune: null,
+      currentFortune: "????",
+      isLoading: false,
     };
   }
 
   setFortune = () => {
-    this.setState({ currentFortune: sample(FORTUNE_RESPONSE)});
+    this.setState({isLoading: true});
+
+    setTimeout(
+      function() {
+          this.setState({ isLoading: false, currentFortune: sample(FORTUNE_RESPONSE)});
+      }
+      .bind(this),
+      3000
+    );
   };
 
   render() {
       return(
       <div>
+        <p>
+          Click the crystal ball to get your answer.
+        </p>
         <img
           src={FortuneTellingBall}
           onClick={this.setFortune}
@@ -47,7 +60,19 @@ class FortuneTelling extends Component {
           alt="fortune telling ball"
         />
         <div>
-          <h2>{this.state.currentFortune}</h2>
+          {!this.state.isLoading &&
+            <h2>{this.state.currentFortune}</h2>
+          }
+          {this.state.isLoading && 
+            <div>
+              <Spinner type="grow" color="light" />
+              <Spinner type="grow" color="secondary" />
+              <Spinner type="grow" color="light" />
+              <Spinner type="grow" color="secondary" />
+              <Spinner type="grow" color="light" />
+              <Spinner type="grow" color="secondary" />
+            </div>
+          }
         </div>
       </div>
       )

@@ -6,7 +6,7 @@ function Footer() {
   return (
     <Nav className="footer">
       <NavItem>
-        <img width="60" src={clippy} style={{paddingTop: 10, paddingLeft: 10}}/>
+        <img width="60" src={clippy} style={{paddingTop: 6, paddingLeft: 10}}/>
       </NavItem>
       <NavItem>
         <NavLink disabled>Brought to you by BotAgainstBangs</NavLink>
