@@ -9,7 +9,7 @@ class HomePage extends Component {
     super(props);
     this.state = {
       showFortuneTeller: false,
-      showSelectionPath: false,
+      showSelectionPath: true,
     };
   }
 
@@ -38,7 +38,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="homepage fixed-top">
-        <h1> Should I get Bangs? </h1>
+        <h1 className='mt-3'> Should I get Bangs? </h1>
           {this.askAFortuneTeller()}
           {this.decideMyOwnFate()}
       </div>
