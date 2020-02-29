@@ -43,14 +43,14 @@ class HomePage extends Component {
     return (
       <div className="homepage fixed-top">
         {!this.state.showSelectionPath &&
-        <h1 className='mt-3' style={{fontSize: 100}}> Should I Get Bangs? </h1>
+        <h1 className='mt-3' style={{fontSize: 75}}> Should I Get Bangs? </h1>
         }
-        
+
         <div>
           {this.askAFortuneTeller()}
           {this.decideMyOwnFate()}
         </div>
-          
+
       </div>
     );
   }
