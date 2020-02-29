@@ -142,7 +142,7 @@ class DecideMyOwnFate extends Component {
           return(
             <div>
               <h3>Why are you lying to YOURSELF?!</h3>
-              <img src="https://media.giphy.com/media/LpEkd4DikUvDdorClo/giphy.gif"/>
+              <img src="https://media.giphy.com/media/cmn4UMlgUlYVG/giphy.gif"/>
               <Row className='justify-content-center mt-2'>
               <Button onClick={() => this.setState({step: WONDERFUL})}
               className='mr-3'>EVERYTHING IS WONDERFUL</Button>
